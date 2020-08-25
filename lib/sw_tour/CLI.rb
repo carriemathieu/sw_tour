@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 class SwTour::CLI
     
-    def self.begin
+    def self.start
         puts "\n☆.。.:*・°☆.。.:*・°☆.。.:*・°☆.。.:*・°"
         puts "\n\u{1F680} Welcome to Star Wars Travel Agency! \u{1F916}"
         puts "*****************************************"
@@ -54,6 +54,19 @@ class SwTour::CLI
     end
 
     def self.travel_again?
-        puts "\nWould you like to travel again? Please input 'yes' to travel again or 'exit' to exit"
+        puts "Would you like to travel again? Please input 'yes' to travel again or 'exit' to exit."
+        input = gets.chomp.downcase
+        if input == "yes"
+            start
+        elsif input == "exit"
+            goodbye
+        else
+            puts "Please enter 'yes' or 'exit' "
+            travel_again?
+        end
+    end
+
+    def self.goodbye
+        puts "We'll see you next time!"
     end
 end

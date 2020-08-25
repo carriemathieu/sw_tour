@@ -5,7 +5,7 @@ class SwTour::Planet
 
     def initialize(planet)
         @planet = planet
-        @@all << @planet
+        @@all << @planet unless @@all.include?(planet)
     end
 
     def self.display_planets
@@ -47,10 +47,6 @@ class SwTour::Planet
             #https://asciiart.website/index.php?art=nature/astronomy
 
         SwTour::CLI.travel_again?
-       # else
-      #      puts "\nGreat choice!"
-     #   end
-    #    puts "\nThe #{chosen_starship["name"]}'s model is #{chosen_starship["model"]} and was manufactured by #{chosen_starship["manufacturer"]}. The #{chosen_starship["name"]} consists of #{chosen_starship["crew"]} crew members."
     end
 
     def self.all

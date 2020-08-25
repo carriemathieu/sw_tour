@@ -2,5 +2,4 @@
 
 require_relative '../lib/sw_tour'
 
-SwTour::CLI.new
-SwTour::CLI.begin
+SwTour::CLI.start

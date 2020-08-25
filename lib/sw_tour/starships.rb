@@ -6,7 +6,7 @@ class SwTour::Starship
 
     def initialize(starship)
         @starship = starship
-        @@all << @starship
+        @@all << @starship unless @@all.include?(starship)
     end
 
     def self.display_starships
