@@ -20,11 +20,12 @@ class SwTour::Starship
         chosen_starship = @@all[ship - 1]
         #binding.pry
         if @dark_side.include?(chosen_starship["name"])
-            puts "Oh! Looks like you've chosen the dark side!".colorize(:red)
+            puts "\nLooks like you've chosen the dark side!".colorize(:red)
         else
-            puts "Great choice!"
+            puts "\nGreat choice!"
         end
-        puts "The #{chosen_starship["name"]}'s model is #{chosen_starship["model"]} and was manufactured by #{chosen_starship["manufacturer"]}. The #{chosen_starship["name"]} consists of #{chosen_starship["crew"]} crew members."
+        puts "\nHere's some information about The #{chosen_starship["name"]}:"
+        puts "The #{chosen_starship["name"]}'s model is #{chosen_starship["model"]} and was manufactured by #{chosen_starship["manufacturer"]}. The #{chosen_starship["name"]} consists of #{chosen_starship["crew"]} crew members.".colorize(:light_yellow)
     end
 
     def self.all

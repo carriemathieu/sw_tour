@@ -12,10 +12,10 @@ class SwTour::CLI
     def self.starship
         SwTour::Starship.display_starships
         puts "Please enter the number for your selected spaceship."
-        get_starship
+        get_ship
     end
 
-    def self.get_starship
+    def self.get_ship
         input = gets.chomp
         ship = input.to_i
         display_starship_info(ship)
@@ -26,13 +26,20 @@ class SwTour::CLI
             SwTour::Starship.starship_info(ship)
         else
             puts "Please enter a valid input."
-            get_starship
+            get_ship
         end
+        puts "\nWhere would you like Chewie to take you?"
+        planets
+    end
+    
+    def self.planets
+        SwTour::Planet.display_planets
+        
     end
 
-
-    
-    #def self.planets
-
-    #end
+    def self.get_ship
+        input = gets.chomp
+        ship = input.to_i
+        display_starship_info(ship)
+    end
 end

@@ -11,8 +11,9 @@ class SwTour::API
     def self.get_planets
         planets = RestClient.get("https://swapi.dev/api/planets/")
         @planets = JSON.parse(planets)
-        #@starship["results"].each do |ship|
-         #   SwTour::Starship.new(ship)
+        @planets["results"].each do |planet|
+            SwTour::Planet.new(planet)
+        end
     end
 
 end
