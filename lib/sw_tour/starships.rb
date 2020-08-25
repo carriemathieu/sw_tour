@@ -1,22 +1,18 @@
 class SwTour::Starships
-    attr_accessor :name, :API, :starship
-    
+    attr_accessor :starship
+
     @@all = []
 
-    def initialize(starship)
-        get_starships
-        @starship.each {|starship, descriptions| self.send(("#{starship}="), descriptions)}
-        @@all << self
-    end
-
-    def self.all
-        @@all
+    def initialize(spaceship)
+        @spaceship = spaceship.new
     end
 
     def self.display_starships
         #binding.pry
-        @@all.each.with_index(1) do |index, ship|
-            puts "#{index}, #{ship}"
+        SwTour::API.get_starships
+        #binding.pry
+        @starship["results"].each.with_index(1) do |ship, index|
+            puts "#{index}. #{ship["name"]}".colorize(:light_blue)
         end
     end
 end

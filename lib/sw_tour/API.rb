@@ -1,8 +1,8 @@
 class SwTour::API
+
     def self.get_starships
         starships = RestClient.get('https://swapi.dev/api/starships/')
         @starship = JSON.parse(starships)
-        puts @starship
     end
 
     def self.get_planets
