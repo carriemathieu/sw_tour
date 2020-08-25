@@ -1,0 +1,3 @@
+class SwTour::Planet
+    
+end

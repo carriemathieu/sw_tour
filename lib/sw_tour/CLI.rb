@@ -6,13 +6,33 @@ class SwTour::CLI
         puts "\n\u{1F680} Welcome to Star Wars Travel Agency! \u{1F916}"
         puts "*****************************************"
         puts "\nChewie will be your pilot today! Which spaceship will you be using?"
-        spaceship
+        starship
     end
 
-    def self.spaceship
-        #SwTour::API.get_starships
-        SwTour::Starships.display_starships
-        #displays options for space ship from 1-10
-        #stores this info for API to use
+    def self.starship
+        SwTour::Starship.display_starships
+        puts "Please enter the number for your selected spaceship."
+        get_starship
     end
+
+    def self.get_starship
+        input = gets.chomp
+        ship = input.to_i
+        display_starship_info(ship)
+    end
+
+    def self.display_starship_info(ship)
+        if ship < SwTour::Starship.all.length + 1 && ship > 0
+            SwTour::Starship.starship_info(ship)
+        else
+            puts "Please enter a valid input."
+            get_starship
+        end
+    end
+
+
+    
+    #def self.planets
+
+    #end
 end
