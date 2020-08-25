@@ -12,13 +12,12 @@ class SwTour::Starship
     def self.display_starships
         SwTour::API.get_starships
         @@all.each.with_index(1) do |ship, index|
-            puts "#{index}. #{ship["name"]}".colorize(:light_blue)
+            puts "#{index}. #{ship["name"]}".colorize(:light_green)
         end
     end
 
     def self.starship_info(ship)
         chosen_starship = @@all[ship - 1]
-        #binding.pry
         if @dark_side.include?(chosen_starship["name"])
             puts "\nLooks like you've chosen the dark side!".colorize(:red)
         else
