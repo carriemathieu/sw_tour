@@ -1,7 +1,13 @@
 class SwTour::API
-    def get_planets
-         planets = RestClient.get('https://swapi.dev/api/')
-         @planets = JSON.parse(planets)
-         binding.pry
+    def self.get_starships
+        starships = RestClient.get('https://swapi.dev/api/starships/')
+        @starship = JSON.parse(starships)
+        puts @starship
     end
+
+    def self.get_planets
+        planets = RestClient.get("https://swapi.dev/api/planets/")
+        @planets = JSON.parse(planets)
+    end
+
 end
