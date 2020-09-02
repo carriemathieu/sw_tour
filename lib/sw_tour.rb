@@ -1,4 +1,4 @@
-#require 'pry'
+require 'pry'
 require 'rest-client'
 require 'json'
 require 'colorize'

@@ -23,7 +23,8 @@ class SwTour::CLI
 
     def self.display_starship_info(ship)
         if ship <= SwTour::Starship.all.length && ship > 0
-            SwTour::Starship.starship_info(ship)
+            chosen_starship = SwTour::Starship.all[ship - 1]
+            chosen_starship.starship_info
         else
             puts "Please enter a valid input."
             get_ship
@@ -46,7 +47,8 @@ class SwTour::CLI
 
     def self.display_planet_info(planet)
         if planet <= SwTour::Planet.all.length && planet > 0
-            SwTour::Planet.planet_info(planet)
+            chosen_planet = SwTour::Planet.all[planet - 1]
+            chosen_planet.planet_info
         else
             puts "Please enter a valid input."
             get_planet
