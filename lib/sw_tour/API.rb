@@ -23,15 +23,3 @@ class SwTour::API
     end
 
 end
-
-# def self.get_api_info(item)
-#     items = RestClient.get("https://www.swapi.tech/api/#{item}/")
-#     @items = JSON.parse(items)
-#     @items["results"].each do |item|
-#         id = item["uid"].to_i
-#         info = RestClient.get("https://www.swapi.tech/api/${item}/#{id}")
-#         item_info = JSON.parse(info)["result"]["properties"]
-
-#         SwTour::Planet.new(item_info) // need to change item to cap
-#     end
-# end
