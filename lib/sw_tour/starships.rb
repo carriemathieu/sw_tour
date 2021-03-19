@@ -4,11 +4,11 @@ class SwTour::Starship
     @@all = []
     @@dark_side = ["Star Destroyer", "Death Star", "TIE Advanced x1", "Executor", "Sentinel-class landing craft"]
 
-    def initialize(starship)
-        @name = starship["name"]
-        @model = starship["model"]
-        @manufacturer = starship["manufacturer"]
-        @crew = starship["crew"]
+    def initialize(ship_info)
+        @name = ship_info["name"]
+        @model = ship_info["model"]
+        @manufacturer = ship_info["manufacturer"]
+        @crew = ship_info["crew"]
         @@all << self
     end
 

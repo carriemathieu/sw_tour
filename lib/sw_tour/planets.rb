@@ -3,11 +3,11 @@ class SwTour::Planet
         
     @@all = []
 
-    def initialize(planet)
-        @name = planet["name"]
-        @climate = planet["climate"]
-        @terrain = planet["terrain"]
-        @population = planet["population"]
+    def initialize(planet_info)
+        @name = planet_info["name"]
+        @climate = planet_info["climate"]
+        @terrain = planet_info["terrain"]
+        @population = planet_info["population"]
         @@all << self
     end
 
