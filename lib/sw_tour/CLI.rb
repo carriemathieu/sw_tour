@@ -40,17 +40,20 @@ class SwTour::CLI
         people
     end
 
+    # gets people info
     def self.people
         SwTour::People.display_people
         get_people
     end
 
+    # prompts user for input
     def self.get_people
         input = gets.chomp
         person = input.to_i
         display_people_info(person)
     end
     
+    # validates input
     def self.display_people_info(person)
         if person <= SwTour::People.all.length && person > 0
             chosen_person = SwTour::People.all[person-1]
@@ -59,6 +62,7 @@ class SwTour::CLI
             "Please enter a valid number:"
             get_people
         end
+        planets
     end
 
     def self.planets
