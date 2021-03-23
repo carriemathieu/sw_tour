@@ -1,5 +1,6 @@
 class SwTour::API
 
+    # gets starships from API, parses data & nested data, instantiates new object in Starship class
     def self.get_starships
         starships = RestClient.get('https://www.swapi.tech/api/starships/')
         @starship = JSON.parse(starships)
@@ -11,6 +12,7 @@ class SwTour::API
         end
     end
 
+    # gets planets from API, parses data & nested data, instantiates new object in Starship class
     def self.get_planets
         planets = RestClient.get("https://www.swapi.tech/api/planets/")
         @planets = JSON.parse(planets)
@@ -22,10 +24,15 @@ class SwTour::API
         end
     end
 
+    # gets people from API, parses data & nested data, instantiates new object in Starship class
     def self.get_people
         people = RestClient.get("https://www.swapi.tech/api/people/")
         @people = JSON.parse(people)
-        binding.pry
-        # SwTour::People.new
+        @people["results"].each do |person|
+            id = person["uid"].to_i
+            info = RestClient.get("https://www.swapi.tech/api/people/#{id}")
+            person_info = JSON.parse(info)["result"]["properties"]
+            SwTour::People.new(person_info)
+        end
     end
 end
