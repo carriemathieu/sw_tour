@@ -14,18 +14,27 @@ class SwTour::People
     def self.display_people
         SwTour::API.get_people if @@all.empty?
         @@all.each.with_index(1) do |person, index|
-            puts "#{index}. #{person.name}".colorize(:light_white)
+            puts "#{index}. #{person.name}".colorize(:light_green)
         end
     end
 
     def person_info
         if self.name == "Darth Vader"
-            puts "\nOH NO! Darth Vader has run off with your ship! :(.".colorize(:white).bold.on_red
-            puts "\nLooks like we'll have to choose again.What ship will you choose this time?\n\n"
+            puts "\n\u{1F6A8} OH NO! Darth Vader has run off with your ship! :(.".colorize(:white).bold.on_red
+            puts "\nLooks like we'll have to choose again. What ship will you choose this time?\n\n"
             SwTour::CLI.starship
         else
-            puts "very good choice!"
-            puts "Time to choose your destination:"
+            puts "#{self.name} - good choice! First we'll need to go pick up your companion then we'll head to your final destination.\n"
+            puts "Keep an eye out for your companion! This is what you should look for: \n".colorize(:magenta)
+            puts "Gender: #{self.gender}\n"
+            puts "Height: #{self.height}cm\n"
+            puts "Eye Color: #{self.eye_color}\n"
+            puts "***************************************************"
+            puts "\u{1F311} \u{1F312} \u{1F313} \u{1F314} \u{1F315} \u{1F316} \u{1F317} \u{1F318}"
+            puts "***************************************************"
+            sleep(5)
+            puts "Perfect! We have picked up #{self.name}! \n\n"
+            puts "Time to choose your destination:\n"
         end
     end
 
