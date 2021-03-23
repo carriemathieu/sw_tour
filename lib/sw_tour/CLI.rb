@@ -31,7 +31,13 @@ class SwTour::CLI
         end
         sleep(3)
         puts "\nWhere would you like Chewie to take you?"
-        planets
+        # planets 
+        people
+    end
+
+    def self.people
+        SwTour::People.display_people
+        get_people
     end
     
     def self.planets

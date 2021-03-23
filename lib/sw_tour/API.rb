@@ -22,4 +22,10 @@ class SwTour::API
         end
     end
 
+    def self.get_people
+        people = RestClient.get("https://www.swapi.tech/api/people/")
+        @people = JSON.parse(people)
+        binding.pry
+        # SwTour::People.new
+    end
 end
