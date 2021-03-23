@@ -20,8 +20,8 @@ class SwTour::People
 
     def person_info
         if self.name == "Darth Vader"
-            puts "\n\u{1F6A8} OH NO! Darth Vader has run off with your ship! :(.".colorize(:white).bold.on_red
-            puts "\nLooks like we'll have to choose again. What ship will you choose this time?\n\n"
+            puts "\n\u{1F6A8} OH NO! Darth Vader has run off with your ship! :(.".colorize(:white).bold
+            puts "\nLooks like we'll have to choose another ship. What ship will you choose this time?\n\n"
             SwTour::CLI.starship
         else
             puts "#{self.name} - good choice! First we'll need to go pick up your companion then we'll head to your final destination.\n"

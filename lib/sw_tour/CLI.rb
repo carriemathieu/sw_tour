@@ -101,5 +101,6 @@ class SwTour::CLI
 
     def self.goodbye
         puts "We'll see you next time!"
+        exit(true)
     end
 end
