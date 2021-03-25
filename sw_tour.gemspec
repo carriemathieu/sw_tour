@@ -4,10 +4,10 @@ Gem::Specification.new do |spec|
   spec.name          = "sw_tour"
   spec.version       = SwTour::VERSION
   spec.authors       = ["carriemathieu"]
-  spec.email         = ["carrieburks@gmail.com"]
+  spec.email         = ["carrie.mathieu@gicloud.com"]
 
   spec.summary       = %q{Travel through the Star Wars Universe - choose your own planet and spaceship!}
-  spec.homepage      = "http://www.learn.co"
+  spec.homepage      = "https://github.com/carriemathieu/sw_tour"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
