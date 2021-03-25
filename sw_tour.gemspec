@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["carriemathieu"]
   spec.email         = ["carrie.mathieu@gicloud.com"]
 
-  spec.summary       = %q{Travel through the Star Wars Universe - choose your own planet and spaceship!}
+  spec.summary       = "Travel through the Star Wars Universe - choose your own spaceship, travel companion, and desination! Built using the Star Wars API - www.swapi.tech"
   spec.homepage      = "https://github.com/carriemathieu/sw_tour"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
