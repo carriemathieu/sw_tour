@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 class SwTour::CLI
-    
-    ## app flow
 
     # start
     def self.start
