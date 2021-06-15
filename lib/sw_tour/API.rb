@@ -36,3 +36,20 @@ class SwTour::API
         end
     end
 end
+
+
+
+# def self.get_starships
+#     getInfo(starships) 
+# end
+
+# def getInfo(items)
+#     items = RestClient.get("https://www.swapi.tech/api/#{item}/")
+#     @item = JSON.parse(items)
+#     @item["results"].each do |obj|
+#         id = obj["uid"].to_i
+#         info = RestClient.get("https://www.swapi.tech/api/#{item}/#{id}")
+#         obj_info = JSON.parse(info)["result"]["properties"]
+#         SwTour::Starship.new(obj_info) -------> how to dynamically assign namespace?
+#     end
+# end
